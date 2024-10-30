@@ -5,10 +5,10 @@ locals {
         }
     }
     workspace = {
-        "example-workspace" = {
+        "infra-tfe" = {
             description = "Example description for workspace"
             execution_mode = "local" 
-            project_id = module.project.id
+            project_id = module.project["example-project"].id
         }
     }
 }
