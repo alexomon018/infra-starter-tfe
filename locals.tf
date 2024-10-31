@@ -13,7 +13,7 @@ locals {
     }
     "infra-github" = {
       description    = "Example automation workspaces for github resources"
-      execution_mode = "local" // there is no state first time so it is set to local
+      execution_mode = "remote" // there is no state first time so it is set to local
       project_id     = module.project["example-project"].id
       identifier     = "${var.github_organization_name}/infra-starter-github"
     }
