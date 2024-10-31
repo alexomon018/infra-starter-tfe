@@ -27,8 +27,3 @@ module "workspace" {
   }
 }
 
-
-moved {
-  from = module.workspace["example-workspace"]
-  to   = module.workspace["infra-tfe"]
-}
