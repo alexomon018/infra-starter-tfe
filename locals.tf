@@ -7,8 +7,9 @@ locals {
     workspace = {
         "infra-tfe" = {
             description = "Example description for workspace"
-            execution_mode = "local" 
+            execution_mode = "remote" 
             project_id = module.project["example-project"].id
+            identifier = "alexomon018/infra-starter-tfe"
         }
     }
 }
