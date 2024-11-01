@@ -17,5 +17,63 @@ locals {
       project_id     = module.project["example-project"].id
       identifier     = "${var.github_organization_name}/infra-starter-github"
     }
+
+    "infra-aws-network" = {
+      description    = "Automation for AWS network resources."
+      execution_mode = "remote"
+      project_id     = module.project["example-project"].id
+      identifier     = "${var.github_organization_name}/infra-starter-aws-network"
+
+      variables = [
+        {
+          category = "terraform"
+          hcl      = true
+          key      = "azs"
+          value    = jsonencode(["us-west-2a", "us-west-2b"])
+        },
+        {
+          category = "terraform"
+          key      = "cidr"
+          value    = "10.0.0.0/16"
+        },
+        {
+          category = "terraform"
+          key      = "name"
+          value    = "infra-starter-network"
+        },
+      ]
+    }
+
+    "infra-cluster-prod" = {
+      description    = "Automation for AWS cluster resources."
+      execution_mode = "remote"
+      project_id     = module.project["example-project"].id
+      identifier     = "${var.github_organization_name}/infra-starter-aws-cluster"
+
+
+      variables = [
+        {
+          category = "terraform"
+          key      = "domain"
+          value    = "supwr.click"
+        },
+        {
+          category = "terraform"
+          key      = "environment"
+          value    = "prod"
+        },
+        {
+          category = "terraform"
+          key      = "name"
+          value    = "infra-starter-cluster-prod"
+        },
+        {
+          category = "terraform"
+          key      = "vpc_name"
+          value    = "infra-starter-network"
+        },
+      ]
+    }
   }
 }
+
