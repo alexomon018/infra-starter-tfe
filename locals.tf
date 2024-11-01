@@ -19,10 +19,10 @@ locals {
     }
 
     "infra-aws-network" = {
-      description         = "Automation for AWS network resources."
-      execution_mode      = "remote"
-      project_id          = module.project["example-project"].id
-      vcs_repo_identifier = "${var.github_organization_name}/infra-starter-aws-network"
+      description    = "Automation for AWS network resources."
+      execution_mode = "remote"
+      project_id     = module.project["example-project"].id
+      identifier     = "${var.github_organization_name}/infra-starter-aws-network"
 
       variables = [
         {
@@ -45,10 +45,10 @@ locals {
     }
 
     "infra-cluster-prod" = {
-      description         = "Automation for AWS cluster resources."
-      execution_mode      = "remote"
-      project_id          = module.project["example-project"].id
-      vcs_repo_identifier = "${var.github_organization_name}/infra-starter-aws-cluster"
+      description    = "Automation for AWS cluster resources."
+      execution_mode = "remote"
+      project_id     = module.project["example-project"].id
+      identifier     = "${var.github_organization_name}/infra-starter-aws-cluster"
 
 
       variables = [
